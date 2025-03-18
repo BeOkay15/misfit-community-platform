@@ -1,6 +1,0 @@
-@MisfitCommunityBackend_HostAddress = http://localhost:5089
-
-GET {{MisfitCommunityBackend_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
