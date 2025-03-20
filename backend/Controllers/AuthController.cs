@@ -78,7 +78,7 @@ namespace MisfitCommunityPlatform.Controllers
                 {
                     new Claim(ClaimTypes.Email, email),
                     new Claim(ClaimTypes.Name, "User"),
-                    new Claim(ClaimTypes.Role, role) // Assign Role
+                    new Claim(ClaimTypes.Role, role.Equals("admin", StringComparison.OrdinalIgnoreCase) ? "Admin" : "User")
                 }),
                 Expires = DateTime.UtcNow.AddMinutes(60),
                 Issuer = jwtSettings["Issuer"],

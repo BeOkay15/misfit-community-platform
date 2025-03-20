@@ -24,6 +24,17 @@ namespace MisfitCommunityPlatform.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllUsers()
         {
+            // Debugging: Log JWT Claims
+            var claims = User.Claims.Select(c => new { c.Type, c.Value }).ToList();
+
+            // Check if the user has the correct "Admin" role
+            var isAdmin = User.IsInRole("Admin");
+
+            if (!isAdmin)
+            {
+                return Unauthorized(new { message = "Access denied. You are not an Admin.", claims });
+            }
+
             var users = await _context.Users.Select(u => new 
             {
                 u.Id,
@@ -43,7 +54,7 @@ namespace MisfitCommunityPlatform.Controllers
             if (email == null) return Unauthorized();
 
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
-            if (user == null) return NotFound();
+            if (user == null) return NotFound(new { message = "User not found" });
 
             return Ok(new { user.Id, user.Email, user.Role });
         }

@@ -21,6 +21,8 @@ var secretKey = Encoding.UTF8.GetBytes(jwtSettings["Secret"] ?? throw new Argume
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
+        options.RequireHttpsMetadata = false;
+        options.SaveToken = true;
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuerSigningKey = true,
