@@ -1,0 +1,14 @@
+# Ignore build and system files
+bin/
+obj/
+.vs/
+.idea/
+.vscode/
+
+# Ignore sensitive configuration files
+appsettings.json
+appsettings.Development.json
+.env
+
+# Ignore dependency folders
+node_modules/

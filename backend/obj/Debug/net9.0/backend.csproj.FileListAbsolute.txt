@@ -141,3 +141,4 @@ E:\misfit-community-platform\backend\obj\Debug\net9.0\refint\backend.dll
 E:\misfit-community-platform\backend\obj\Debug\net9.0\backend.pdb
 E:\misfit-community-platform\backend\obj\Debug\net9.0\backend.genruntimeconfig.cache
 E:\misfit-community-platform\backend\obj\Debug\net9.0\ref\backend.dll
+E:\misfit-community-platform\backend\bin\Debug\net9.0\Swashbuckle.AspNetCore.Annotations.dll
