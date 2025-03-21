@@ -13,7 +13,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ type }) => {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5184";
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://imaginative-light-production.up.railway.app";
 
   const handleSubmit = async () => {
     setError(null);
